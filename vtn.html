@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hihihihihi </title>
+    <style>
+        body {
+            background-image: url('IMG_2985.JPG');
+            background-size: 100%;
+            background-position: center top;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #additionalText {
+            margin-top: 20px; /* Füge einen oberen Abstand zum zusätzlichen Text hinzu */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="text">Drücke auf "Ja" für eine Überraschung</h1>
+    <button id="jaButton1" onclick="showText('Ja')">Ja</button>
+    <button id="neinButton1" onclick="showText('Nein')">Nein</button>
+
+    <script>
+        function showText(choice) {
+            var textElement = document.getElementById('text');
+            var jaButton1 = document.getElementById('jaButton1');
+            var neinButton1 = document.getElementById('neinButton1');
+
+            if (choice === 'Ja') {
+                textElement.innerHTML = "Willst du es wirklich wissen? <button onclick='displayText()'>Ja</button> <button onclick='showText(\"Nein\")'>Nein</button>";
+                jaButton1.style.display = 'none';
+                neinButton1.style.display = 'none';
+            } else if (choice === 'Nein') {
+                textElement.innerHTML = "Tja Pech gehabt";
+                jaButton1.style.display = 'none';
+                neinButton1.style.display = 'none';
+            }
+        }
+
+        function displayText() {
+            var textElement = document.getElementById('text');
+            textElement.innerHTML = "Meine kleine mausi Pupsiiiii";
+            var additionalText = document.createElement('p');
+            additionalText.id = 'additionalText';
+            additionalText.innerHTML = "Willst du mein Valentin sein hihihihi"; // Füge deinen gewünschten Text hier hinzu
+            document.body.appendChild(additionalText);
+        }
+    </script>
+
+    <button id="jaButton2" style="display: none;" onclick="displayText()">Ja</button>
+    <button id="neinButton2" style="display: none;" onclick="showText('Nein')">Nein</button>
+
+</body>
+</html>
